@@ -14,7 +14,6 @@ class Phone(Field):
     def number_validation(self):
         return len(self.value) == 10 and self.value.isdigit()
 
-
 class Record:
     def __init__(self, name):
         self.name = Name(name)
