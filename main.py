@@ -33,13 +33,13 @@ class Record:
             if phone.value == phone_to_delete:
                 self.phones.remove(phone)
                 return
-        print(f"Phone {phone_to_delete} not found.")
+            raise ValueError(f"Phone {phone_to_delete} not found.")
 
     def edit_phone(self, old_phone, new_phone):
         for phone in self.phones:
             if phone.value == old_phone:
-                self.phones.remove(phone)
                 self.add_phone(new_phone)
+                self.phones.remove(phone)
                 return
             else:
                 raise ValueError (f"Invalid phone number: {old_phone}")
